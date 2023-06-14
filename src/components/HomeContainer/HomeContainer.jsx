@@ -1,11 +1,21 @@
-import FormContainer from "../FormContainer/FormContainer";
-import MoviesListContainer from "../MoviesListContainer/MoviesContainer";
+import { useParams } from "react-router-dom";
+
+import MoviesListContainer from "../MoviesListContainer/MoviesListContainer";
+import MovieDetailContainer from "../MovieDetailContainer/MovieDetailContainer";
 
 const HomeContainer = () => {
+  const { movieTitle } = useParams();
+  const { movieId } = useParams();
+
   return (
     <>
-      <FormContainer />
-      <MoviesListContainer />
+      {movieTitle ? (
+        <MoviesListContainer />
+      ) : movieId ? (
+        <MovieDetailContainer />
+      ) : (
+        ""
+      )}
     </>
   );
 };
