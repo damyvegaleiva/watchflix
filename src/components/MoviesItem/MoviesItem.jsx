@@ -6,7 +6,7 @@ const MoviesItem = ({ imdbID, Title, Poster, Year }) => {
   return (
     <li
       key={imdbID}
-      className="flex flex-col items-center justify-center w-1/4 px-6 transition duration-500 bg-black rounded-md shadow-lg shadow-white mb-7 hover:cursor-pointer hover:scale-105 easy-in-out grayscale-75 hover:grayscale-0"
+      className="flex flex-col items-center justify-center w-5/6 px-5 mx-auto transition duration-300 bg-black border rounded-md mb-7 sm:w-1/2 md:max-w-lg lg:w-2/5 md:hover:cursor-pointer md:hover:scale-105 lg:border-transparent lg:grayscale-75 lg:hover:grayscale-0 lg:hover:border-white xl:w-30 2xl:w-50 "
       onClick={() => navigate(`/movie/${imdbID}`)}
     >
       <h3 className="my-3 text-2xl text-center">{Title}</h3>

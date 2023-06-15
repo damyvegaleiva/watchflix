@@ -35,13 +35,13 @@ const FormContainer = () => {
         <input
           type="search"
           value={input}
-          placeholder="Avengers, Star Wars and more..."
+          placeholder="Avengers, Star Wars, etc..."
           onChange={handleChange}
-          className="w-1/4 py-2 pl-4 mb-4 rounded"
+          className="w-1/2 py-2 pl-4 mb-4 text-xs rounded sm:text-xl sm:w-1/2 sm:max-w-md"
         />
         <button
           type="submit"
-          className="w-2/12 px-4 py-1 text-xl text-white border rounded-md"
+          className="w-1/3 py-1 text-white border rounded-md sm:w-1/5 sm:max-w-sm"
         >
           Find
         </button>

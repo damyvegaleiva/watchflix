@@ -2,8 +2,8 @@ import MoviesItem from "../MoviesItem/MoviesItem";
 
 const MoviesList = ({ movies }) => {
   return (
-    <div className="w-3/4 m-auto">
-      <ul className="flex flex-row flex-wrap items-center justify-around w-full gap-5 m-auto text-white">
+    <div>
+      <ul className="gap-1 px-5 w-full m-auto text-white lg:gap-1.5 sm:flex sm:flex-row sm:flex-wrap justify-between">
         {movies.map((movie) => (
           <MoviesItem key={movie.imdbID} {...movie} />
         ))}
