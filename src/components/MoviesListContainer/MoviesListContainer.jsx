@@ -1,10 +1,12 @@
 import { useParams } from "react-router-dom";
-import useFetch from "../../hooks/useFetch";
 import MoviesList from "../MoviesList/MoviesList";
+import useFetch from "../../hooks/useFetch";
+import { MOVIE_SEARCH_URL } from "../../config/config";
 
 const MoviesListContainer = () => {
   const { movieTitle } = useParams();
-  const { data, hasMovies } = useFetch(`s=${movieTitle}`);
+  const { useGetMovies } = useFetch();
+  const { data, hasMovies } = useGetMovies(MOVIE_SEARCH_URL(movieTitle));
 
   return (
     <main className="mt-10">

@@ -1,19 +1,16 @@
 import { useParams } from "react-router-dom";
 import useFetch from "../../hooks/useFetch";
+import { MOVIE_DETAIL_URL } from "../../config/config";
+import MovieDetail from "../MovieDetail/MovieDetail";
 
 const MovieDetailContainer = () => {
   const { movieId } = useParams();
+  const { useGetMovieDetail } = useFetch();
+  const { data: movie } = useGetMovieDetail(MOVIE_DETAIL_URL(movieId));
 
-  const { data } = useFetch(`i=${movieId}`);
+  console.log(movie);
 
-  return (
-    <div>
-      <h3 className="my-3 text-2xl text-center">{data.Titleitle}</h3>
-      <img src={data.Poster} alt={data.Title} className="mb-3 rounded-md" />
-      <p className="text-xl">{data.Year}</p>
-      <p>{data.Plot}</p>
-    </div>
-  );
+  return <MovieDetail {...movie} />;
 };
 
 export default MovieDetailContainer;

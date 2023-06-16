@@ -37,7 +37,7 @@ const FormContainer = () => {
           value={input}
           placeholder="Avengers, Star Wars, etc..."
           onChange={handleChange}
-          className="w-1/2 py-2 pl-4 mb-4 text-base rounded sm:text-xl sm:w-1/2 sm:max-w-md"
+          className="w-1/2 py-2 pl-4 mb-4 text-base border-red-700 rounded outline-none sm:text-xl sm:w-1/2 sm:max-w-md focus:border-2"
         />
         <button
           type="submit"

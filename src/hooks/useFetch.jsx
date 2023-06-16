@@ -1,36 +1,43 @@
-// import withResults from "../mocks/with-result.json";
-// import noResults from "../mocks/no-results.json";
-import { useEffect, useState } from "react";
+import { useState } from "react";
+import { useEffect } from "react";
+import { BASE_URL, OPTIONS } from "../config/config";
 
-const useFetch = (value) => {
-  const [data, setData] = useState([]);
-  // const movies = data.Search || Object.keys(data).length > 2;
-  const hasMovies = data?.length > 0 || Object.keys(data).length > 2;
+const useFetch = () => {
+  const useGetMovies = (value) => {
+    const [data, setData] = useState([]);
+    const hasMovies = data?.length > 1;
 
-  useEffect(() => {
-    fetch(`https://www.omdbapi.com/?apikey=2b9059a1&${value}`)
-      .then((response) => response.json())
-      .then((data) => {
-        if (data.Search) {
-          setData(data.Search);
-          return;
-        } else if (Object.keys(data).length > 2) {
-          setData(data);
-          return;
-        }
-      });
-  }, [value]);
+    useEffect(() => {
+      fetch(BASE_URL + value, OPTIONS)
+        .then((response) => response.json())
+        .then((data) =>
+          setData(
+            data.results.map(({ poster_path, ...rest }) => ({
+              ...rest,
+              poster: poster_path,
+            }))
+          )
+        )
+        .catch((err) => console.error(err));
+    }, [value]);
 
-  // const mappedMovies = movies?.map((movie) => ({
-  //   id: movie.imdbID,
-  //   title: movie.Title,
-  //   poster: movie.Poster,
-  //   year: movie.Year,
-  // }));
+    return { data, hasMovies };
+  };
 
-  // console.log(mappedMovies);
+  const useGetMovieDetail = (value) => {
+    const [data, setData] = useState([]);
 
-  return { data, hasMovies };
+    useEffect(() => {
+      fetch(BASE_URL + value, OPTIONS)
+        .then((response) => response.json())
+        .then((data) => setData(data))
+        .catch((err) => console.error(err));
+    }, [value]);
+
+    return { data };
+  };
+
+  return { useGetMovies, useGetMovieDetail };
 };
 
 export default useFetch;
