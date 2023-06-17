@@ -1,7 +1,15 @@
 import { Link } from "react-router-dom";
 import { IMDB_URL, IMG_URL } from "../../config/config";
+import MovieProvidersContainer from "../MovieProvidersContainer/MovieProvidersContainer";
 
-const MovieDetail = ({ title, poster_path, overview, homepage, imdb_id }) => {
+const MovieDetail = ({
+  title,
+  poster_path,
+  overview,
+  homepage,
+  imdb_id,
+  id,
+}) => {
   return (
     <div className="mt-24 text-center text-white w">
       <h2 className="my-3 text-2xl text-center text-white">{title}</h2>
@@ -19,6 +27,7 @@ const MovieDetail = ({ title, poster_path, overview, homepage, imdb_id }) => {
         {" "}
         IMDb page
       </Link>
+      <MovieProvidersContainer movieId={id} />
     </div>
   );
 };

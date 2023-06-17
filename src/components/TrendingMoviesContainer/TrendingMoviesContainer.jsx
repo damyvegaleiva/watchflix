@@ -1,12 +1,14 @@
 import { TRENDING_URL } from "../../config/config";
+import SpinnerLoader from "../SpinnerLoader/SpinnerLoader";
 
 import useFetch from "../../hooks/useFetch";
 import TrendingMoviesList from "../TrendingMoviesList/TrendingMoviesList";
 
 const TrendingMoviesContainer = () => {
   const { useGetMovies } = useFetch();
+  const { data: movies, isLoading } = useGetMovies(TRENDING_URL);
 
-  const { data: movies } = useGetMovies(TRENDING_URL);
+  if (isLoading) return <SpinnerLoader />;
 
   return (
     <section>

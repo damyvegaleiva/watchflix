@@ -11,7 +11,6 @@ const HomeContainer = () => {
   return (
     <>
       <TrendingMoviesContainer />
-
       {movieTitle ? (
         <MoviesListContainer />
       ) : movieId ? (
