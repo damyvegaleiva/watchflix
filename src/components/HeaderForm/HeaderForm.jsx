@@ -1,5 +1,3 @@
-import "./HeaderForm.css";
-
 const HeaderForm = ({ handleChange, handleSubmit, input }) => {
   return (
     <form

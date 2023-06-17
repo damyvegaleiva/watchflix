@@ -1,5 +1,4 @@
 import ScrollContainer from "react-indiana-drag-scroll";
-
 import TrendingItem from "../TrendingItem/TrendingItem";
 
 const TrendingMoviesList = ({ movies }) => {

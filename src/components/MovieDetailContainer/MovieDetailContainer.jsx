@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom";
-import useFetch from "../../hooks/useFetch";
 import { MOVIE_DETAIL_URL } from "../../config/config";
+import useFetch from "../../hooks/useFetch";
 import MovieDetail from "../MovieDetail/MovieDetail";
 import SpinnerLoader from "../SpinnerLoader/SpinnerLoader";
 
