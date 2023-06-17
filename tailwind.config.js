@@ -11,6 +11,9 @@ export default {
       },
       width: {
         '30': '30%',
+      },
+      colors: {
+        'clear': 'rgba(255, 255, 255, 0.1)'
       }
     },
   },

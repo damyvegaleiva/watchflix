@@ -9,7 +9,7 @@ const TrendingItem = ({ poster, id, title }) => {
       src={IMG_URL + poster}
       alt={title}
       onClick={() => navigate(`/movie/${id}`)}
-      className="mx-0.5 rounded-md hover:cursor-pointer h-96 lg:hover:scale-110 lg:hover:mx-4 transition-scale ease-in-out duration-100 "
+      className=" mx-0.5 h-80 rounded-md hover:cursor-pointer lg:h-96 lg:hover:scale-110 lg:hover:mx-4 transition-scale ease-in-out duration-100 "
     />
   );
 };

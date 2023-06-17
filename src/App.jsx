@@ -2,14 +2,14 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
 import HomeContainer from "./components/HomeContainer/HomeContainer";
 import MovieDetailContainer from "./components/MovieDetailContainer/MovieDetailContainer";
-import FormContainer from "./components/FormContainer/FormContainer";
 import MoviesListContainer from "./components/MoviesListContainer/MoviesListContainer";
+import HeaderContainer from "./components/HeaderContainer/HeaderContainer";
 
 function App() {
   return (
     <div className="App">
       <BrowserRouter>
-        <FormContainer />
+        <HeaderContainer />
         <Routes>
           <Route path="/" element={<HomeContainer />} />
           <Route path="/search/:movieTitle" element={<MoviesListContainer />} />
