@@ -1,9 +1,9 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.scss";
 import HomeContainer from "./components/HomeContainer/HomeContainer";
-import MovieDetailContainer from "./components/MovieDetailContainer/MovieDetailContainer";
-import MoviesListContainer from "./components/MoviesListContainer/MoviesListContainer";
+import DetailContainer from "./components/DetailContainer/DetailContainer";
 import HeaderContainer from "./components/HeaderContainer/HeaderContainer";
+import TvMoviesListContainer from "./components/TvMoviesListContainer/TvMoviesListContainer";
 
 function App() {
   return (
@@ -12,8 +12,12 @@ function App() {
         <HeaderContainer />
         <Routes>
           <Route path="/" element={<HomeContainer />} />
-          <Route path="/search/:movieTitle" element={<MoviesListContainer />} />
-          <Route path="/movie/:movieId" element={<MovieDetailContainer />} />
+          <Route
+            path="/search/:movieTitle"
+            element={<TvMoviesListContainer />}
+          />
+          <Route path="/movie/:id" element={<DetailContainer />} />
+          <Route path="/tv/:id" element={<DetailContainer />} />
         </Routes>
       </BrowserRouter>
     </div>

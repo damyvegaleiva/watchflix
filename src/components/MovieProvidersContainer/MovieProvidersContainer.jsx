@@ -1,9 +1,15 @@
-import { IMG_URL } from "../../config/config";
+import { useParams } from "react-router-dom";
+import { IMG_URL, WATCH_PROVIDER } from "../../config/config";
 import useFetch from "../../hooks/useFetch";
 
-const MovieProvidersContainer = ({ movieId }) => {
+const MovieProvidersContainer = () => {
+  const params = useParams();
+  const selection = window.location.pathname.split("/")[1];
+
+  console.log(selection, params.id);
+
   const { useGetWatchProviders } = useFetch();
-  const { data } = useGetWatchProviders(movieId);
+  const { data } = useGetWatchProviders(WATCH_PROVIDER(selection, params.id));
 
   return (
     <div className="mt-10 mb-5 ">

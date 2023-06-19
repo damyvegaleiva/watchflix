@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { IMG_URL } from "../../config/config";
 
-const MoviesItem = ({ id, title, poster }) => {
+const TvMoviesItem = ({ id, title, poster }) => {
   const navigate = useNavigate();
 
   return (
@@ -22,4 +22,4 @@ const MoviesItem = ({ id, title, poster }) => {
   );
 };
 
-export default MoviesItem;
+export default TvMoviesItem;

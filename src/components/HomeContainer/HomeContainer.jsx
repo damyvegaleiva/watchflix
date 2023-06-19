@@ -1,8 +1,8 @@
 import { useParams } from "react-router-dom";
-
-import MoviesListContainer from "../MoviesListContainer/MoviesListContainer";
-import MovieDetailContainer from "../MovieDetailContainer/MovieDetailContainer";
-import TrendingMoviesContainer from "../TrendingMoviesContainer/TrendingMoviesContainer";
+import TrendingContainer from "../TrendingContainer/TrendingContainer";
+import SpinnerLoader from "../SpinnerLoader/SpinnerLoader";
+import DetailContainer from "../DetailContainer/DetailContainer";
+import TvMoviesListContainer from "../TvMoviesListContainer/TvMoviesListContainer";
 
 const HomeContainer = () => {
   const { movieTitle } = useParams();
@@ -10,11 +10,17 @@ const HomeContainer = () => {
 
   return (
     <>
-      <TrendingMoviesContainer />
+      <TrendingContainer
+        title={"MOVIES"}
+        trendingValue={"movie"}
+        loader={<SpinnerLoader />}
+      />
+      <TrendingContainer title={"TV SHOWS"} trendingValue={"tv"} />
+
       {movieTitle ? (
-        <MoviesListContainer />
+        <TvMoviesListContainer />
       ) : movieId ? (
-        <MovieDetailContainer />
+        <DetailContainer />
       ) : (
         ""
       )}

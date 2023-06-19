@@ -1,19 +1,23 @@
 import { useParams } from "react-router-dom";
-import { MOVIE_DETAIL_URL } from "../../config/config";
+import { DETAIL_URL } from "../../config/config";
 import useFetch from "../../hooks/useFetch";
-import MovieDetail from "../MovieDetail/MovieDetail";
+import MovieDetail from "../Detail/Detail";
 import SpinnerLoader from "../SpinnerLoader/SpinnerLoader";
 
-const MovieDetailContainer = () => {
-  const { movieId } = useParams();
+const DetailContainer = () => {
+  const params = useParams();
+  const selection = window.location.pathname.split("/")[1];
+
   const { useGetMovieDetail } = useFetch();
   const { data: movie, isLoading } = useGetMovieDetail(
-    MOVIE_DETAIL_URL(movieId)
+    DETAIL_URL(selection, params.id)
   );
+
+  console.log(movie);
 
   if (isLoading) return <SpinnerLoader />;
 
   return <MovieDetail {...movie} />;
 };
 
-export default MovieDetailContainer;
+export default DetailContainer;

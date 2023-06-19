@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useEffect } from "react";
-import { BASE_URL, MOVIE_WATCH_PROVIDER, OPTIONS } from "../config/config";
+import { BASE_URL, OPTIONS } from "../config/config";
 
 const useFetch = () => {
   const [data, setData] = useState([]);
@@ -53,7 +53,7 @@ const useFetch = () => {
 
   const useGetWatchProviders = (value) => {
     useEffect(() => {
-      fetch(BASE_URL + MOVIE_WATCH_PROVIDER(value), OPTIONS)
+      fetch(BASE_URL + value, OPTIONS)
         .then((response) => response.json())
         .then((data) => {
           setData(data.results.US.buy);
