@@ -1,8 +1,8 @@
 import { useParams } from "react-router-dom";
 import { DETAIL_URL } from "../../config/config";
 import useFetch from "../../hooks/useFetch";
-import MovieDetail from "../Detail/Detail";
 import SpinnerLoader from "../SpinnerLoader/SpinnerLoader";
+import Detail from "../Detail/Detail";
 
 const DetailContainer = () => {
   const params = useParams();
@@ -13,11 +13,9 @@ const DetailContainer = () => {
     DETAIL_URL(selection, params.id)
   );
 
-  console.log(movie);
-
   if (isLoading) return <SpinnerLoader />;
 
-  return <MovieDetail {...movie} />;
+  return <Detail {...movie} />;
 };
 
 export default DetailContainer;

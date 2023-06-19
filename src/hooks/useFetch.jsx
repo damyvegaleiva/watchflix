@@ -56,7 +56,8 @@ const useFetch = () => {
       fetch(BASE_URL + value, OPTIONS)
         .then((response) => response.json())
         .then((data) => {
-          setData(data.results.US.buy);
+          if (data.results.US?.buy) return setData(data.results.US?.buy);
+          setData(data.results.US?.flatrate);
         })
         .catch((err) => console.error(err));
     }, [value]);

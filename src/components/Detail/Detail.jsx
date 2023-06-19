@@ -1,28 +1,31 @@
 import { Link } from "react-router-dom";
 import { IMDB_URL, IMG_URL } from "../../config/config";
-import MovieProvidersContainer from "../MovieProvidersContainer/MovieProvidersContainer";
+import ProvidersContainer from "../ProvidersContainer/ProvidersContainer";
 
-const MovieDetail = ({ name, poster_path, overview, homepage, imdb_id }) => {
+const Detail = ({ title, name, poster_path, overview, homepage, imdb_id }) => {
   return (
-    <div className="mt-24 text-center text-white w">
-      <h2 className="my-3 text-2xl text-center text-white">{name}</h2>
+    <div className="text-center text-white ">
+      <h2 className="my-3 text-2xl text-center text-white">
+        {name ? name : title}
+      </h2>
       <img
         src={IMG_URL + poster_path}
-        alt={name}
+        alt={name ? name : title}
         className="mx-auto mb-3 rounded-md"
       />
-      <p>{overview}</p>
       <Link to={homepage} target="_blank" rel="noopener noreferrer">
         Official Website
       </Link>
 
       <Link to={IMDB_URL + imdb_id} target="_blank" rel="noopener noreferrer">
-        {" "}
         IMDb page
       </Link>
-      <MovieProvidersContainer />
+
+      <p className="w-full mx-auto mt-5 lg:w-1/2">{overview}</p>
+
+      <ProvidersContainer />
     </div>
   );
 };
 
-export default MovieDetail;
+export default Detail;

@@ -2,11 +2,9 @@ import { useParams } from "react-router-dom";
 import { IMG_URL, WATCH_PROVIDER } from "../../config/config";
 import useFetch from "../../hooks/useFetch";
 
-const MovieProvidersContainer = () => {
+const ProvidersContainer = () => {
   const params = useParams();
   const selection = window.location.pathname.split("/")[1];
-
-  console.log(selection, params.id);
 
   const { useGetWatchProviders } = useFetch();
   const { data } = useGetWatchProviders(WATCH_PROVIDER(selection, params.id));
@@ -33,4 +31,4 @@ const MovieProvidersContainer = () => {
   );
 };
 
-export default MovieProvidersContainer;
+export default ProvidersContainer;
