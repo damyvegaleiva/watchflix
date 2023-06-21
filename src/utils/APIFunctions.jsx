@@ -25,5 +25,8 @@ export const getProviders = (data) => {
 };
 
 export const getTrailer = (data) => {
-  return data.results.find((video) => video.type.toLowerCase() === "trailer");
+  return (
+    data.results.find((video) => video.name === "Official Trailer") ||
+    data.results.find((video) => video.name === "Trailer")
+  );
 };

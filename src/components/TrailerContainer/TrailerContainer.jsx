@@ -12,11 +12,12 @@ const TrailerContainer = () => {
     getTrailer
   );
 
+  if (!video) return <h1>No trailer available.</h1>;
+
   return (
     <iframe
       allow="fullscreen"
-      className="m-auto aspect-video lg:h-96 md:h-64 sm:h-52"
-      key={video.id}
+      className="m-auto mb-24 aspect-video lg:h-96 md:h-64 sm:h-52"
       src={YOUTUBE_URL + video.key}
     ></iframe>
   );
