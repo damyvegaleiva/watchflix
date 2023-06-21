@@ -14,7 +14,8 @@ const TrailerContainer = () => {
 
   return (
     <iframe
-      className="m-auto aspect-video h-96"
+      allow="fullscreen"
+      className="m-auto aspect-video lg:h-96 md:h-64 sm:h-52"
       key={video.id}
       src={YOUTUBE_URL + video.key}
     ></iframe>

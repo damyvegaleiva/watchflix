@@ -10,7 +10,7 @@ const Detail = ({ title, poster, overview, homepage, imdb_id }) => {
       <img
         src={IMG_URL + poster}
         alt={title}
-        className="mx-auto my-5 mb-3 border rounded-md"
+        className="w-3/4 mx-auto mb-3 border rounded-md sm:w-3/5 md:w-2/5 xl:w-1/5 lg:w-2/5 lg:mx-auto lg:my-5"
       />
 
       <DetailLink url={homepage} title={"Official Website"} />
@@ -21,7 +21,7 @@ const Detail = ({ title, poster, overview, homepage, imdb_id }) => {
         ""
       )}
 
-      <p className="w-full mx-auto mt-5 lg:w-1/2">{overview}</p>
+      <p className="w-3/4 mx-auto mt-5 lg:w-1/2">{overview}</p>
 
       <ProvidersContainer />
       <TrailerContainer />
