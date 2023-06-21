@@ -1,13 +1,12 @@
 import { useParams } from "react-router-dom";
 import { IMG_URL, WATCH_PROVIDER } from "../../config/config";
 import useFetch from "../../hooks/useFetch";
+import { getProviders } from "../../utils/APIFunctions";
 
 const ProvidersContainer = () => {
   const params = useParams();
   const selection = window.location.pathname.split("/")[1];
-
-  const { useGetWatchProviders } = useFetch();
-  const { data } = useGetWatchProviders(WATCH_PROVIDER(selection, params.id));
+  const { data } = useFetch(WATCH_PROVIDER(selection, params.id), getProviders);
 
   return (
     <div className="mt-10 mb-5 ">

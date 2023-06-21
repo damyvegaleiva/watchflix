@@ -1,4 +1,5 @@
 import { VIDEOS_URL, YOUTUBE_URL } from "../../config/config";
+import { getTrailer } from "../../utils/APIFunctions";
 import useFetch from "../../hooks/useFetch";
 import { useParams } from "react-router-dom";
 
@@ -6,8 +7,10 @@ const TrailerContainer = () => {
   const params = useParams();
   const selection = window.location.pathname.split("/")[1];
 
-  const { useGetTrailer } = useFetch();
-  const { data: video } = useGetTrailer(VIDEOS_URL(selection, params.id));
+  const { data: video } = useFetch(
+    VIDEOS_URL(selection, params.id),
+    getTrailer
+  );
 
   return (
     <iframe

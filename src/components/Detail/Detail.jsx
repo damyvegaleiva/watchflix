@@ -14,7 +14,12 @@ const Detail = ({ title, poster, overview, homepage, imdb_id }) => {
       />
 
       <DetailLink url={homepage} title={"Official Website"} />
-      <DetailLink url={IMDB_URL + imdb_id} title={"IMDb page"} />
+
+      {imdb_id ? (
+        <DetailLink url={IMDB_URL + imdb_id} title={"IMDb page"} />
+      ) : (
+        ""
+      )}
 
       <p className="w-full mx-auto mt-5 lg:w-1/2">{overview}</p>
 
