@@ -6,6 +6,8 @@ const useFetch = () => {
   const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
+  ////////////// TODO -GET DATA MOVIES/SERIES
+
   const useGetMovies = (value) => {
     const hasMovies = data?.length > 1;
 
@@ -14,14 +16,14 @@ const useFetch = () => {
 
       fetch(BASE_URL + value, OPTIONS)
         .then((response) => response.json())
-        .then((data) =>
+        .then((data) => {
           setData(
             data.results.map(({ poster_path, ...rest }) => ({
               ...rest,
               poster: poster_path,
             }))
-          )
-        )
+          );
+        })
         .catch((err) => console.error(err))
         .finally(() =>
           setTimeout(() => {
@@ -33,13 +35,32 @@ const useFetch = () => {
     return { data, hasMovies, isLoading };
   };
 
+  ////////////// TODO -GET ITEM DETAIL
+
   const useGetMovieDetail = (value) => {
     useEffect(() => {
       setIsLoading(true);
 
       fetch(BASE_URL + value, OPTIONS)
         .then((response) => response.json())
-        .then((data) => setData(data))
+        .then((data) => {
+          value.includes("tv")
+            ? setData(() => {
+                const { name, poster_path, ...rest } = data;
+                return {
+                  title: name,
+                  poster: poster_path,
+                  ...rest,
+                };
+              })
+            : setData(() => {
+                const { poster_path, ...rest } = data;
+                return {
+                  poster: poster_path,
+                  ...rest,
+                };
+              });
+        })
         .catch((err) => console.error(err))
         .finally(() =>
           setTimeout(() => {
@@ -51,12 +72,14 @@ const useFetch = () => {
     return { data, isLoading };
   };
 
+  ////////////// TODO -GET PROVIDERS TO WATCH MOVIE
+
   const useGetWatchProviders = (value) => {
     useEffect(() => {
       fetch(BASE_URL + value, OPTIONS)
         .then((response) => response.json())
         .then((data) => {
-          if (data.results.US?.buy) return setData(data.results.US?.buy);
+          if (data.results.US.buy) return setData(data.results.US.buy);
           setData(data.results.US?.flatrate);
         })
         .catch((err) => console.error(err));
@@ -64,8 +87,28 @@ const useFetch = () => {
 
     return { data };
   };
+  ////////////// TODO -GET TRAILER
 
-  return { useGetMovies, useGetMovieDetail, useGetWatchProviders, isLoading };
+  const useGetTrailer = (value) => {
+    useEffect(() => {
+      fetch(BASE_URL + value, OPTIONS)
+        .then((response) => response.json())
+        .then((data) =>
+          setData(data.results?.find((video) => video.name.includes("Trailer")))
+        )
+        .catch((err) => console.log(err));
+    }, [value]);
+
+    return { data, isLoading };
+  };
+
+  return {
+    useGetMovies,
+    useGetMovieDetail,
+    useGetWatchProviders,
+    useGetTrailer,
+    isLoading,
+  };
 };
 
 export default useFetch;
@@ -83,7 +126,7 @@ export default useFetch;
 //     setIsLoading(true);
 //     try {
 //       const response = await fetch(BASE_URL + value, OPTIONS);
-//       const json = await response.json();
+//       const json = await re sponse.json();
 
 //       if (Array.isArray(json.results)) {
 //         setData(

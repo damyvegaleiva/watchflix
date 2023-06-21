@@ -15,7 +15,7 @@ const DetailContainer = () => {
 
   if (isLoading) return <SpinnerLoader />;
 
-  return <Detail {...movie} />;
+  return <Detail {...movie} isLoading={isLoading} />;
 };
 
 export default DetailContainer;
