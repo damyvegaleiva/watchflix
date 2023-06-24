@@ -13,7 +13,7 @@ const HeaderForm = ({ handleChange, handleSubmit, input, handleCheck }) => {
         value={input}
         placeholder="Avengers, Star Wars, etc..."
         onChange={handleChange}
-        className="w-1/2 py-2 pl-4 mb-4 text-base border-red-700 rounded outline-none form-input sm:text-xl sm:w-1/2 sm:max-w-md focus:border-2"
+        className="w-2/3 py-1 pl-4 mb-4 text-sm border-red-700 rounded outline-none sm:w-1/2 form-input sm:text-xl sm:max-w-md focus:border-2"
       />
       <button
         type="submit"

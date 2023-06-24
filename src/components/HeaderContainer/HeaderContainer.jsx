@@ -3,7 +3,7 @@ import HeaderFormContainer from "../HeaderFormContainer/HeaderFormContainer";
 
 const HeaderContainer = () => {
   return (
-    <header className="mb-32 ">
+    <header className="mb-16 md:mb-44">
       <HeaderImage />
       <HeaderFormContainer />
     </header>
