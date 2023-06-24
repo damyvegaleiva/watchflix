@@ -3,7 +3,7 @@ import TrendingItem from "../TrendingItem/TrendingItem";
 
 const TrendingList = ({ data, trendingValue }) => {
   return (
-    <ScrollContainer className="flex flex-row mb-24 scroll-container">
+    <ScrollContainer className="flex flex-row scroll-container">
       {data.map((movie) => (
         <TrendingItem key={movie.id} {...movie} trendingValue={trendingValue} />
       ))}

@@ -26,7 +26,9 @@ const Detail = ({
 
       {imdb_id && <DetailLink url={IMDB_URL + imdb_id} title={"IMDb page"} />}
 
-      <p className="w-3/4 mx-auto mt-5 lg:w-1/2">{overview}</p>
+      <p className="w-3/4 mx-auto mt-10 text-sm sm:text-base lg:w-1/2">
+        {overview}
+      </p>
 
       <ErrorBoundary fallback="[Sorry an unexpected error has ocurred.]">
         <ProvidersContainer providers={providers} />

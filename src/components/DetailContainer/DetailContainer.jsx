@@ -13,6 +13,8 @@ const DetailContainer = () => {
     getModifiedData
   );
 
+  console.log(data);
+
   if (isLoading) return <SpinnerLoader />;
 
   return <Detail {...data} isLoading={isLoading} />;

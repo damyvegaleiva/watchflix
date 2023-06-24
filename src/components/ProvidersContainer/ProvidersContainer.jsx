@@ -5,7 +5,7 @@ const ProvidersContainer = ({ providers }) => {
   const providersResults = getProviders(providers);
 
   return (
-    <div className="w-3/4 mx-auto mt-10 mb-5">
+    <div className="w-3/4 mx-auto mt-10 mb-14">
       <h2 className="mb-2 tracking-wide underline decoration lg:text-lg ">
         Available on:
       </h2>

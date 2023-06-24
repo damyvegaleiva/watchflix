@@ -1,6 +1,6 @@
 import TrendingContainer from "../TrendingContainer/TrendingContainer";
-import SpinnerLoader from "../SpinnerLoader/SpinnerLoader";
 import { Helmet } from "react-helmet-async";
+import TopRatedContainer from "../TopRatedContainer/TopRatedContainer";
 
 const HomeContainer = () => {
   return (
@@ -9,11 +9,8 @@ const HomeContainer = () => {
         <title>Welcome to Watchflix</title>
       </Helmet>
 
-      <TrendingContainer
-        title={"MOVIES"}
-        trendingValue={"movie"}
-        loader={<SpinnerLoader />}
-      />
+      <TopRatedContainer />
+      <TrendingContainer title={"MOVIES"} trendingValue={"movie"} />
       <TrendingContainer title={"TV SHOWS"} trendingValue={"tv"} />
     </>
   );
