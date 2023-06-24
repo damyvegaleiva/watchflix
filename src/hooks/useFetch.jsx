@@ -19,7 +19,7 @@ const useFetch = (APIvalue, dataModifier) => {
       } finally {
         setTimeout(() => {
           setIsLoading(false);
-        }, 1500);
+        }, 2000);
       }
     }
 

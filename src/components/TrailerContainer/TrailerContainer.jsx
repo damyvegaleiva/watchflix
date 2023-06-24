@@ -9,7 +9,7 @@ const TrailerContainer = ({ videos }) => {
   return (
     <iframe
       allow="fullscreen"
-      className="m-auto mb-24 aspect-video lg:h-96 md:h-64 sm:h-52"
+      className="h-auto m-auto mb-24 aspect-video lg:h-96 md:h-64 sm:h-64 min-[450px]:h-52"
       src={YOUTUBE_URL + trailer.key}
     ></iframe>
   );
