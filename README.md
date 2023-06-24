@@ -19,7 +19,7 @@ This project was created with Vite.
 
 ## Usage
 
-The website at the moment works only with the trending movies/tv shows.
+The website is fully working. You can search just for movies/tv shows or you can also search for both.
 
 ## Bugs Reports:
 
