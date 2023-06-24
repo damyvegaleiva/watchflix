@@ -1,10 +1,13 @@
-const HeaderForm = ({ handleChange, handleSubmit, input }) => {
+import HeaderFormOption from "../HeaderFormOption/HeaderFormOption";
+
+const HeaderForm = ({ handleChange, handleSubmit, input, handleCheck }) => {
   return (
     <form
       action="submit"
       onSubmit={handleSubmit}
       className="flex flex-col items-center content-center gap-2 m-auto text-center"
     >
+      <HeaderFormOption handleCheck={handleCheck} />
       <input
         type="search"
         value={input}

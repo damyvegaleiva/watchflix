@@ -9,15 +9,21 @@ const useFetch = (APIvalue, dataModifier) => {
   useEffect(() => {
     setIsLoading(true);
 
-    fetch(BASE_URL + APIvalue, OPTIONS)
-      .then((response) => response.json())
-      .then((data) => setData(dataModifier(data)))
-      .catch((error) => console.log(error))
-      .finally(() => {
+    async function fetchData() {
+      try {
+        const request = await fetch(BASE_URL + APIvalue, OPTIONS);
+        const data = await request.json();
+        setData(dataModifier(data));
+      } catch (error) {
+        console.log(error);
+      } finally {
         setTimeout(() => {
           setIsLoading(false);
-        }, 1000);
-      });
+        }, 1500);
+      }
+    }
+
+    fetchData();
   }, [APIvalue, dataModifier]);
 
   return { data, isLoading };

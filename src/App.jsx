@@ -4,22 +4,25 @@ import HomeContainer from "./components/HomeContainer/HomeContainer";
 import DetailContainer from "./components/DetailContainer/DetailContainer";
 import HeaderContainer from "./components/HeaderContainer/HeaderContainer";
 import TvMoviesListContainer from "./components/TvMoviesListContainer/TvMoviesListContainer";
+import { HelmetProvider } from "react-helmet-async";
 
 function App() {
   return (
     <div className="App">
-      <BrowserRouter>
-        <HeaderContainer />
-        <Routes>
-          <Route path="/" element={<HomeContainer />} />
-          <Route
-            path="/search/:movieTitle"
-            element={<TvMoviesListContainer />}
-          />
-          <Route path="/movie/:id" element={<DetailContainer />} />
-          <Route path="/tv/:id" element={<DetailContainer />} />
-        </Routes>
-      </BrowserRouter>
+      <HelmetProvider>
+        <BrowserRouter>
+          <HeaderContainer />
+          <Routes>
+            <Route path="/" element={<HomeContainer />} />
+            <Route
+              path="/search/:optionId/:id"
+              element={<TvMoviesListContainer />}
+            />
+            <Route path="/movie/:id" element={<DetailContainer />} />
+            <Route path="/tv/:id" element={<DetailContainer />} />
+          </Routes>
+        </BrowserRouter>
+      </HelmetProvider>
     </div>
   );
 }

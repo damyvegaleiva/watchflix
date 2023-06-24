@@ -17,9 +17,9 @@ export const getModifiedData = (data) => {
 };
 
 export const getProviders = (data) => {
-  if (data.results.US.link.includes("tv")) {
-    return data.results.US.flatrate;
-  }
+  if (Object.keys(data.results)) return [];
+
+  if (data.results.US.link.includes("tv")) return data.results.US.flatrate;
 
   return data.results.US.buy;
 };

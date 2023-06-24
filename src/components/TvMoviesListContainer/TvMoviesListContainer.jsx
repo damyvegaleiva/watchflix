@@ -1,13 +1,13 @@
 import { useParams } from "react-router-dom";
-
 import useFetch from "../../hooks/useFetch";
 import { MOVIE_SEARCH_URL } from "../../config/config";
 import TvMoviesList from "../TvMoviesList/TvMoviesList";
+import { getModifiedData } from "../../utils/APIFunctions";
 
 const TvMoviesListContainer = () => {
-  const { movieTitle } = useParams();
-  const { useGetMovies } = useFetch();
-  const { data, hasMovies } = useGetMovies(MOVIE_SEARCH_URL(movieTitle));
+  const { id, optionId } = useParams();
+  const { data } = useFetch(MOVIE_SEARCH_URL(optionId, id), getModifiedData);
+  const hasMovies = data.length > 1;
 
   return (
     <main className="mt-10">
