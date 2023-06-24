@@ -7,8 +7,6 @@ const HeaderFormContainer = () => {
   const [option, setOption] = useState([]);
   const navigate = useNavigate();
 
-  console.log(option);
-
   const handleCheck = (e) => {
     if (option.find((option) => option === e.target.name))
       return setOption(option.filter((option) => option !== e.target.name));
@@ -23,7 +21,7 @@ const HeaderFormContainer = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    if (input) {
+    if (input && option.length > 0) {
       navigate(`/search/${option.length > 1 ? "multi" : option[0]}/${input}`);
       setInput("");
       return;
