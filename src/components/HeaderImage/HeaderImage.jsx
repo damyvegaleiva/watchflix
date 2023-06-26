@@ -12,7 +12,11 @@ const HeaderImage = () => {
       className="py-5 my-10 bg-black hover:cursor-pointer"
       onClick={() => handleClick()}
     >
-      <img className="mx-auto " src={"/images/watchflix.png"} />
+      <img
+        className="mx-auto "
+        src={"/images/watchflix.png"}
+        alt="Logo of the website."
+      />
       <p className="text-xs text-center text-white">Where the movies are</p>
     </div>
   );

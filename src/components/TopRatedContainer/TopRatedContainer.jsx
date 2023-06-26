@@ -1,8 +1,8 @@
 import { TOP_URL } from "../../config/config";
-import useFetch from "../../hooks/useFetch";
 import { getModifiedData } from "../../utils/APIFunctions";
+import useFetch from "../../hooks/useFetch";
 import SpinnerLoader from "../SpinnerLoader/SpinnerLoader";
-import TrendingList from "../TrendingList/TrendingList";
+import SliderList from "../SliderList/SliderList";
 
 const TopRatedContainer = () => {
   const { data, isLoading } = useFetch(TOP_URL, getModifiedData);
@@ -14,7 +14,7 @@ const TopRatedContainer = () => {
       <h2 className="w-2/3 py-3 pl-4 mb-5 italic tracking-widest text-left text-white rounded-sm lg:text-3xl bg-gradient-to-r from-red-600">
         TOP RATED MOVIES
       </h2>
-      <TrendingList data={data} trendingValue={"movie"} />
+      <SliderList data={data} tvMovieValue={"movie"} />
     </section>
   );
 };

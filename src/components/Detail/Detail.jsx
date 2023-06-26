@@ -3,6 +3,7 @@ import ProvidersContainer from "../ProvidersContainer/ProvidersContainer";
 import DetailLink from "../DetailLink/DetailLink";
 import TrailerContainer from "../TrailerContainer/TrailerContainer";
 import ErrorBoundary from "../../utils/errorBoundary";
+import RecommendationsContainer from "../RecommendationsContainer/RecommendationsContainer";
 
 const Detail = ({
   title,
@@ -12,6 +13,7 @@ const Detail = ({
   imdb_id,
   videos,
   ["watch/providers"]: providers,
+  recommendations,
 }) => {
   return (
     <div className="-mt-5 text-center text-white ">
@@ -30,10 +32,11 @@ const Detail = ({
         {overview}
       </p>
 
+      <TrailerContainer videos={videos} />
       <ErrorBoundary fallback="[Sorry an unexpected error has ocurred.]">
         <ProvidersContainer providers={providers} />
       </ErrorBoundary>
-      <TrailerContainer videos={videos} />
+      <RecommendationsContainer recommendations={recommendations} />
     </div>
   );
 };

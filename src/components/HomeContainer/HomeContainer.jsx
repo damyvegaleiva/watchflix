@@ -1,6 +1,6 @@
-import TrendingContainer from "../TrendingContainer/TrendingContainer";
 import { Helmet } from "react-helmet-async";
 import TopRatedContainer from "../TopRatedContainer/TopRatedContainer";
+import SliderContainer from "../SliderContainer/SliderContainer";
 
 const HomeContainer = () => {
   return (
@@ -10,8 +10,8 @@ const HomeContainer = () => {
       </Helmet>
 
       <TopRatedContainer />
-      <TrendingContainer title={"MOVIES"} trendingValue={"movie"} />
-      <TrendingContainer title={"TV SHOWS"} trendingValue={"tv"} />
+      <SliderContainer title={"MOVIES"} tvMovieValue={"movie"} />
+      <SliderContainer title={"TV SHOWS"} tvMovieValue={"tv"} />
     </>
   );
 };

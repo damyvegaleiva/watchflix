@@ -26,8 +26,6 @@ const HeaderFormContainer = () => {
       setInput("");
       return;
     }
-
-    navigate("/");
   };
 
   return (
