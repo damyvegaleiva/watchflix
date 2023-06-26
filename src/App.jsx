@@ -1,16 +1,18 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.scss";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { HelmetProvider } from "react-helmet-async";
+import HeaderContainer from "./components/HeaderContainer/HeaderContainer";
 import HomeContainer from "./components/HomeContainer/HomeContainer";
 import DetailContainer from "./components/DetailContainer/DetailContainer";
-import HeaderContainer from "./components/HeaderContainer/HeaderContainer";
 import TvMoviesListContainer from "./components/TvMoviesListContainer/TvMoviesListContainer";
-import { HelmetProvider } from "react-helmet-async";
+import ScrollToTop from "./components/ScrollToTop/ScrollToTop";
 
 function App() {
   return (
     <div className="App">
       <HelmetProvider>
         <BrowserRouter>
+          <ScrollToTop />
           <HeaderContainer />
           <Routes>
             <Route path="/" element={<HomeContainer />} />

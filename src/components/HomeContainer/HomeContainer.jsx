@@ -1,13 +1,11 @@
-import { Helmet } from "react-helmet-async";
+import HelmetContainer from "../HelmetContainer/HelmetContainer";
 import TopRatedContainer from "../TopRatedContainer/TopRatedContainer";
 import SliderContainer from "../SliderContainer/SliderContainer";
 
 const HomeContainer = () => {
   return (
     <>
-      <Helmet>
-        <title>Welcome to Watchflix</title>
-      </Helmet>
+      <HelmetContainer title={"Welcome To Netflix"} />
 
       <TopRatedContainer />
       <SliderContainer title={"MOVIES"} tvMovieValue={"movie"} />

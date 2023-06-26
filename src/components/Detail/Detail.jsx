@@ -1,9 +1,10 @@
-import { IMDB_URL, IMG_URL } from "../../config/config";
-import ProvidersContainer from "../ProvidersContainer/ProvidersContainer";
-import DetailLink from "../DetailLink/DetailLink";
+import DetailPoster from "../DetailPoster/DetailPoster";
+import DetailLinkContainer from "../DetailLinkContainer/DetailLinkContainer";
 import TrailerContainer from "../TrailerContainer/TrailerContainer";
 import ErrorBoundary from "../../utils/errorBoundary";
+import ProvidersContainer from "../ProvidersContainer/ProvidersContainer";
 import RecommendationsContainer from "../RecommendationsContainer/RecommendationsContainer";
+import DetailParagraph from "../DetailParagraph/DetailParagraph";
 
 const Detail = ({
   title,
@@ -16,28 +17,21 @@ const Detail = ({
   recommendations,
 }) => {
   return (
-    <div className="-mt-5 text-center text-white ">
-      <h2 className="my-3 text-2xl text-center text-white">{title}</h2>
-      <img
-        src={IMG_URL + poster}
-        alt={title}
-        className="w-3/4 mx-auto mb-3 border rounded-md sm:w-3/5 md:w-2/5 xl:w-1/5 lg:w-2/5 lg:mx-auto lg:my-5"
-      />
+    <article className="-mt-5 text-center text-white ">
+      <DetailPoster title={title} poster={poster} />
 
-      {homepage && <DetailLink url={homepage} title={"Official Website"} />}
+      <DetailLinkContainer homepage={homepage} imdb_id={imdb_id} />
 
-      {imdb_id && <DetailLink url={IMDB_URL + imdb_id} title={"IMDb page"} />}
-
-      <p className="w-3/4 mx-auto mt-10 text-sm sm:text-base lg:w-1/2">
-        {overview}
-      </p>
+      <DetailParagraph overview={overview} />
 
       <TrailerContainer videos={videos} />
+
       <ErrorBoundary fallback="[Sorry an unexpected error has ocurred.]">
         <ProvidersContainer providers={providers} />
       </ErrorBoundary>
+
       <RecommendationsContainer recommendations={recommendations} />
-    </div>
+    </article>
   );
 };
 
