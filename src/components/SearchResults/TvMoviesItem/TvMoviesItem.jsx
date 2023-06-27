@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import { IMG_URL } from "../../config/config";
+import { IMG_URL } from "../../../config/config";
 
 const TvMoviesItem = ({ id, title, poster, media_type, optionId }) => {
   const navigate = useNavigate();

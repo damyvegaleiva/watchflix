@@ -1,8 +1,8 @@
 import { TOP_URL } from "../../config/config";
 import { getModifiedData } from "../../utils/APIFunctions";
 import useFetch from "../../hooks/useFetch";
-import SpinnerLoader from "../SpinnerLoader/SpinnerLoader";
-import SliderList from "../SliderList/SliderList";
+import SpinnerLoader from "../Loader/SpinnerLoader/SpinnerLoader";
+import SliderList from "../Slider/SliderList/SliderList";
 
 const TopRatedContainer = () => {
   const { data, isLoading } = useFetch(TOP_URL, getModifiedData);

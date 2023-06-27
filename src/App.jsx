@@ -1,11 +1,11 @@
 import "./App.scss";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
-import HeaderContainer from "./components/HeaderContainer/HeaderContainer";
-import HomeContainer from "./components/HomeContainer/HomeContainer";
-import DetailContainer from "./components/DetailContainer/DetailContainer";
-import TvMoviesListContainer from "./components/TvMoviesListContainer/TvMoviesListContainer";
 import ScrollToTop from "./components/ScrollToTop/ScrollToTop";
+import HeaderContainer from "./components/Header/HeaderContainer/HeaderContainer";
+import HomeContainer from "./components/HomeContainer/HomeContainer";
+import TvMoviesListContainer from "./components/SearchResults/TvMoviesListContainer/TvMoviesListContainer";
+import DetailContainer from "./components/Detail/DetailContainer/DetailContainer";
 
 function App() {
   return (

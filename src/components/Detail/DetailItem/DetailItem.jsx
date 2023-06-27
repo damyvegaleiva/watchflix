@@ -1,12 +1,12 @@
 import DetailPoster from "../DetailPoster/DetailPoster";
 import DetailLinkContainer from "../DetailLinkContainer/DetailLinkContainer";
-import TrailerContainer from "../TrailerContainer/TrailerContainer";
-import ErrorBoundary from "../../utils/errorBoundary";
-import ProvidersContainer from "../ProvidersContainer/ProvidersContainer";
-import RecommendationsContainer from "../RecommendationsContainer/RecommendationsContainer";
+import TrailerContainer from "../../TrailerContainer/TrailerContainer";
+import ProvidersContainer from "../../ProvidersContainer/ProvidersContainer";
+import ErrorBoundary from "../../../utils/ErrorBoundary";
+import RecommendationsContainer from "../../RecommendationsContainer/RecommendationsContainer";
 import DetailParagraph from "../DetailParagraph/DetailParagraph";
 
-const Detail = ({
+const DetailItem = ({
   title,
   poster,
   overview,
@@ -35,4 +35,4 @@ const Detail = ({
   );
 };
 
-export default Detail;
+export default DetailItem;

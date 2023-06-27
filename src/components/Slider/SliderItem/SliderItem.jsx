@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import { IMG_URL } from "../../config/config";
+import { IMG_URL } from "../../../config/config";
 
 const SliderItem = ({ poster, id, title, tvMovieValue, difStyle }) => {
   const navigate = useNavigate();

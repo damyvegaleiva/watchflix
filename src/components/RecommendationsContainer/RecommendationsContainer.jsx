@@ -1,5 +1,5 @@
 import { getModifiedData } from "../../utils/APIFunctions";
-import SliderList from "../SliderList/SliderList";
+import SliderList from "../Slider/SliderList/SliderList";
 
 const RecommendationsContainer = ({ recommendations }) => {
   const related = getModifiedData(recommendations);

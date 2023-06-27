@@ -1,9 +1,9 @@
+import { MOVIE_SEARCH_URL } from "../../../config/config";
 import { useParams } from "react-router-dom";
-import useFetch from "../../hooks/useFetch";
-import { MOVIE_SEARCH_URL } from "../../config/config";
+import { getModifiedData } from "../../../utils/APIFunctions";
+import useFetch from "../../../hooks/useFetch";
+import SpinnerLoader from "../../Loader/SpinnerLoader/SpinnerLoader";
 import TvMoviesList from "../TvMoviesList/TvMoviesList";
-import { getModifiedData } from "../../utils/APIFunctions";
-import SpinnerLoader from "../SpinnerLoader/SpinnerLoader";
 
 const TvMoviesListContainer = () => {
   const { id, optionId } = useParams();

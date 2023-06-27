@@ -1,10 +1,10 @@
 import { useParams } from "react-router-dom";
-import { DETAILS_URL } from "../../config/config";
-import { getModifiedData } from "../../utils/APIFunctions";
-import useFetch from "../../hooks/useFetch";
-import Detail from "../Detail/Detail";
-import SpinnerLoader from "../SpinnerLoader/SpinnerLoader";
-import HelmetContainer from "../HelmetContainer/HelmetContainer";
+import { DETAILS_URL } from "../../../config/config";
+import { getModifiedData } from "../../../utils/APIFunctions";
+import useFetch from "../../../hooks/useFetch";
+import DetailItem from "../DetailItem/DetailItem";
+import HelmetContainer from "../../HelmetContainer/HelmetContainer";
+import SpinnerLoader from "../../Loader/SpinnerLoader/SpinnerLoader";
 
 const DetailContainer = () => {
   const params = useParams();
@@ -24,7 +24,7 @@ const DetailContainer = () => {
 
   return (
     <>
-      <Detail {...data} isLoading={isLoading} />;
+      <DetailItem {...data} isLoading={isLoading} />;
     </>
   );
 };

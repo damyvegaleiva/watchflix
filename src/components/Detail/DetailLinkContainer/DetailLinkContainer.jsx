@@ -1,4 +1,4 @@
-import { IMDB_URL } from "../../config/config";
+import { IMDB_URL } from "../../../config/config";
 import DetailLink from "../DetailLink/DetailLink";
 
 const DetailLinkContainer = ({ homepage, imdb_id }) => {

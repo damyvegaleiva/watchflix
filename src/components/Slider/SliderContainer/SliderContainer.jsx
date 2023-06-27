@@ -1,6 +1,6 @@
-import { TRENDING_URL } from "../../config/config";
-import { getModifiedData } from "../../utils/APIFunctions";
-import useFetch from "../../hooks/useFetch";
+import { TRENDING_URL } from "../../../config/config";
+import { getModifiedData } from "../../../utils/APIFunctions";
+import useFetch from "../../../hooks/useFetch";
 import SliderList from "../SliderList/SliderList";
 
 const SliderContainer = ({ title, tvMovieValue }) => {
