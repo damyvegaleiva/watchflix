@@ -1,8 +1,8 @@
 import DetailPoster from "../DetailPoster/DetailPoster";
 import DetailLinkContainer from "../DetailLinkContainer/DetailLinkContainer";
 import TrailerContainer from "../../TrailerContainer/TrailerContainer";
+import ErrorBoundary from "../../../utils/errorBoundary";
 import ProvidersContainer from "../../ProvidersContainer/ProvidersContainer";
-import ErrorBoundary from "../../../utils/ErrorBoundary";
 import RecommendationsContainer from "../../RecommendationsContainer/RecommendationsContainer";
 import DetailParagraph from "../DetailParagraph/DetailParagraph";
 
