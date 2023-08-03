@@ -1,10 +1,12 @@
 import DetailPoster from "../DetailPoster/DetailPoster";
 import DetailLinkContainer from "../DetailLinkContainer/DetailLinkContainer";
-import TrailerContainer from "../../TrailerContainer/TrailerContainer";
+
 import ErrorBoundary from "../../../utils/errorBoundary";
-import ProvidersContainer from "../../ProvidersContainer/ProvidersContainer";
-import RecommendationsContainer from "../../RecommendationsContainer/RecommendationsContainer";
+
 import DetailParagraph from "../DetailParagraph/DetailParagraph";
+import TrailerContainer from "../../../containers/TrailerContainer/TrailerContainer";
+import ProvidersContainer from "../../../containers/ProvidersContainer/ProvidersContainer";
+import RecommendationsContainer from "../../../containers/RecommendationsContainer/RecommendationsContainer";
 
 const DetailItem = ({
   title,

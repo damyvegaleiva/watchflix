@@ -9,7 +9,7 @@ const HeaderImage = () => {
 
   return (
     <div
-      className="py-5 my-10 bg-black hover:cursor-pointer"
+      className="py-5 my-10 hover:cursor-pointer"
       onClick={() => handleClick()}
     >
       <img

@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
-import HeaderForm from "../HeaderForm/HeaderForm";
 import { useState } from "react";
+import HeaderForm from "../HeaderForm/HeaderForm";
 
 const HeaderFormContainer = () => {
   const [input, setInput] = useState("");
@@ -34,6 +34,7 @@ const HeaderFormContainer = () => {
       handleSubmit={handleSubmit}
       handleChange={handleChange}
       input={input}
+      option={option}
     />
   );
 };
