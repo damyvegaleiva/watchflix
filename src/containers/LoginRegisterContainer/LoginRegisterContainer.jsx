@@ -7,8 +7,12 @@ const LoginRegisterContainer = ({ FormContainer }) => {
         className="absolute object-cover w-full h-full -z-10"
       />
 
-      <div className="w-[80%] lg:w-[800px] md:h-[800px] rounded-md border  flex gap-5 items-center justify-center flex-col backdrop-blur-sm bg-black/60">
-        <img src="/images/watchflix.png" alt="Logo" />
+      <div className="w-[80%] lg:w-[800px] md:h-[800px] rounded-md border py-5  flex gap-5 items-center justify-center flex-col backdrop-blur-sm bg-black/60">
+        <img
+          src="/images/watchflix.png"
+          alt="Logo"
+          className="w-[375px] sm:w-[475px] md:w-auto "
+        />
         <p className="mb-10 -mt-5 text-xs text-center text-white">
           Where the movies are
         </p>

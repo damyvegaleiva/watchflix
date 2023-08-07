@@ -44,7 +44,7 @@ const FormLoginContainer = () => {
     setIsSuccessful(true);
     setTimeout(() => {
       navigate("/home");
-    }, 5000);
+    }, 1500);
   };
 
   ///HANDLE LOG IN WITH GOOGLE

@@ -18,7 +18,7 @@ const FormInput = ({
         value={value}
         onChange={(e) => handleChange(e)}
         className={
-          "py-2 pl-5 pr-10 border-2 focus:outline-none focus:border-red-600 rounded-2xl w-96 placeholder:italic " +
+          "text-xs py-2.5 pl-5 border-2 focus:outline-none focus:border-red-600 rounded-2xl sm:w-96 placeholder:italic " +
           (errors && "text-red-600")
         }
         required

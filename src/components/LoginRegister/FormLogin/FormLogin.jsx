@@ -17,7 +17,7 @@ const FormLogin = ({
     <SuccessfulContainer title={"Logging you in... ✔️"} />
   ) : (
     <>
-      <h2 className="text-[1.75rem] font-extrabold text-center text-red-600 underline decoration-white decoration-2 mb-5">
+      <h2 className="text-[1.5rem] sm:text-[1.75rem] font-extrabold text-center text-red-600 underline decoration-white decoration-2 mb-5">
         LOGIN
       </h2>
 
@@ -53,25 +53,28 @@ const FormLogin = ({
         />
 
         <button
-          className="w-full px-5 py-2 text-white transition duration-300 ease-in-out border hover:border-red-600 hover:text-red-600 rounded-xl hover:bg-white"
+          className="py-2 text-xs text-white transition duration-300 ease-in-out border sm:text-lg sm:w-full hover:border-red-600 hover:text-red-600 rounded-xl hover:bg-white w-36"
           type="submit"
         >
           SIGN IN
         </button>
         <p className="-m-5 text-white">OR</p>
         <button
-          className="w-full px-5 py-2 text-white transition duration-300 ease-in-out border hover:border-red-600 hover:text-red-600 rounded-xl hover:bg-white"
+          className="py-2 text-xs text-white transition duration-300 ease-in-out border w-36 w-1/ sm:text-lg sm:w-full hover:border-red-600 hover:text-red-600 rounded-xl hover:bg-white"
           type="submit"
           onClick={(e) => handleGoogle(e)}
         >
           SIGN IN WITH GOOGLE
         </button>
-        <p className="text-white">
+        <p className="text-sm text-center text-white sm:text-lg w-2/2">
           Don&apos;t have an account?{" "}
-          <Link to={"/register"} className="hover:underline">
-            REGISTER
-          </Link>
         </p>
+        <Link
+          to={"/register"}
+          className="-mt-2 text-sm text-white sm:text-lg hover:underline"
+        >
+          REGISTER
+        </Link>
       </form>
     </>
   );
