@@ -1,13 +1,12 @@
 const LoginRegisterContainer = ({ FormContainer }) => {
   return (
-    <div className="flex items-center justify-center w-screen h-screen">
+    <main className="flex items-center justify-center w-screen h-screen">
       <img
         src="./images/login-bg.jpg"
         alt=""
         className="absolute object-cover w-screen h-screen -z-10"
       />
-
-      <div className="w-[80%] lg:w-[800px] md:h-[800px] rounded-md border py-5  flex gap-5 items-center justify-center flex-col backdrop-blur-sm bg-black/60">
+      <section className="w-[80%] lg:w-[800px] md:h-[800px] rounded-md border py-5  flex gap-5 items-center justify-center flex-col backdrop-blur-sm bg-black/60">
         <img
           src="/images/watchflix.png"
           alt="Logo"
@@ -18,8 +17,8 @@ const LoginRegisterContainer = ({ FormContainer }) => {
         </p>
 
         {FormContainer}
-      </div>
-    </div>
+      </section>
+    </main>
   );
 };
 

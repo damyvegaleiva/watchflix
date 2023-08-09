@@ -3,6 +3,7 @@ import { FaUserAlt } from "react-icons/fa";
 import FormInput from "../FormInput/FormInput";
 import FormEyeIcon from "../FormEyeIcon/FormEyeIcon";
 import SuccessfulContainer from "../../../containers/SuccessfulContainer/SuccessfulContainer";
+import Button from "../../Button/Button";
 
 const FormRegister = ({
   userForm,
@@ -21,7 +22,7 @@ const FormRegister = ({
   ) : (
     <>
       <h2 className="text-[1.5rem] sm:text-[1.75rem] font-extrabold text-center text-red-600 underline decoration-white decoration-2 mb-5">
-        LOGIN
+        REGISTER
       </h2>
       <form
         className="flex flex-col items-center justify-center gap-10 mx-auto rounded-xl "
@@ -71,15 +72,12 @@ const FormRegister = ({
           }
         />
 
-        <button
-          className="py-2 text-xs text-white transition duration-300 ease-in-out border sm:text-lg sm:w-full hover:border-red-600 hover:text-red-600 rounded-xl hover:bg-white w-36"
-          type="submit"
-        >
-          SUBMIT
-        </button>
+        <Button title={"SUBMIT"} />
+
         <p className="text-sm text-center text-white sm:text-lg w-2/2">
           Already have an account?
         </p>
+
         <Link
           to={"/"}
           className="-mt-2 text-sm text-white sm:text-lg hover:underline"

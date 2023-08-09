@@ -19,7 +19,6 @@ export const AuthProvider = ({ children }) => {
   useEffect(() => {
     const subscribed = onAuthStateChanged(auth, (currentUser) => {
       if (currentUser) {
-        console.log(currentUser);
         setUser(currentUser);
         return;
       }

@@ -12,7 +12,7 @@ import SearchResultsContainer from "./containers/SearchResultsContainer/SearchRe
 import DetailContainer from "./containers/DetailContainer/DetailContainer";
 import ProtectedRoutes from "./components/ProtectedRoutes/ProtectedRoutes";
 import { useContext } from "react";
-import Logout from "./components/Logout/Logout";
+import NavbarContainer from "./containers/NavbarContainer/NavbarContainer";
 
 function App() {
   const { user } = useContext(AuthContext);
@@ -25,7 +25,7 @@ function App() {
           {user ? (
             <>
               {" "}
-              <Logout /> <HeaderContainer />{" "}
+              <NavbarContainer /> <HeaderContainer />{" "}
             </>
           ) : null}
           <Routes>

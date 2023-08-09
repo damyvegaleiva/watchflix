@@ -9,7 +9,7 @@ const SliderItem = ({ poster, id, title, tvMovieValue, difStyle }) => {
       src={IMG_URL + poster}
       alt={title}
       onClick={() => navigate(`/${tvMovieValue}/${id}`)}
-      className={`mx-0.5 h-60 md:h-80 rounded-md hover:cursor-pointer lg:h-96 lg:hover:scale-110 lg:hover:mx-4 transition-scale ease-in-out duration-100 ${difStyle}`}
+      className={`mx-0.5 h-44 md:h-80 rounded-md hover:cursor-pointer lg:h-96 lg:hover:scale-110 lg:hover:mx-4 transition-scale ease-in-out duration-100 ${difStyle}`}
     />
   );
 };

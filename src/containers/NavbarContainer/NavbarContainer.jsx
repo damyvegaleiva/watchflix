@@ -2,11 +2,12 @@ import { useContext, useState } from "react";
 import { AuthContext } from "../../context/AuthContext";
 import { Link, useNavigate } from "react-router-dom";
 import { RxHamburgerMenu, RxCross1 } from "react-icons/rx";
+import Button from "../../components/Button/Button";
 
-const Logout = () => {
+const NavbarContainer = () => {
   const { logout, user } = useContext(AuthContext);
   const navigate = useNavigate();
-  const [isActive, setIsActive] = useState("-left-full");
+  const [isActive, setIsActive] = useState("-left-[1000px]");
   const [isClicked, setIsClicked] = useState(false);
 
   const handleLogout = () => {
@@ -17,9 +18,9 @@ const Logout = () => {
   const handleShowHideNavBar = () => {
     setIsClicked((prev) => !prev);
 
-    if (isActive === "-left-full") return setIsActive("left-0");
+    if (isActive === "-left-[1000px]") return setIsActive("left-0");
 
-    setIsActive("-left-full");
+    setIsActive("-left-[1000px]");
   };
   return (
     <nav className="relative flex flex-row items-center justify-between gap-5 px-8 py-2 border-b border-red-600 bg-black-600">
@@ -27,34 +28,20 @@ const Logout = () => {
         <img
           src={"./images/preview.png"}
           alt="Watchflix logo"
-          className="w-24 "
+          className="w-24"
         />
       </Link>
-      <div
-        className={`bg-black absolute transition:left lg:hidden duration-500 py-10 ease-in-out flex flex-col items-center justify-center w-full h-[500px] gap-5 top-32 ${isActive} md:flex`}
-      >
-        <h2 className="text-white">
-          Welcome &ldquo;{user.displayName || user.email}&ldquo;
-        </h2>
-        <button
-          className="w-1/3 px-3 py-1 text-sm text-white border rounded-md hover:bg-white hover:text-red-600"
-          onClick={handleLogout}
-        >
-          SIGN OUT
-        </button>
-      </div>
 
-      {/* /////DESKTOP/////////////////////////////// */}
-      <div className="flex-col items-end justify-center hidden gap-2 lg:flex">
-        <h2 className="text-white">
+      {/* -------------------------------MOBILE */}
+
+      <div
+        className={`bg-black absolute transition:left lg:hidden duration-500 py-10 text-center ease-in-out flex flex-col items-center justify-center w-full h-[500px] gap-5 top-32 ${isActive} md:flex`}
+      >
+        <h2 className="text-white ">
           Welcome &ldquo;{user.displayName || user.email}&ldquo;
         </h2>
-        <button
-          className="px-3 py-1 text-sm text-white border rounded-md hover:bg-white hover:text-red-600"
-          onClick={handleLogout}
-        >
-          SIGN OUT
-        </button>
+
+        <Button title={"SIGN OUT"} handleSubmit={handleLogout} />
       </div>
       {isClicked ? (
         <RxCross1
@@ -67,8 +54,18 @@ const Logout = () => {
           onClick={handleShowHideNavBar}
         />
       )}
+
+      {/* -------------------------------DESKTOP */}
+
+      <div className="items-end justify-center hidden gap-2 lg:flex-col lg:flex">
+        <h2 className="text-white ">
+          Welcome &ldquo;{user.displayName || user.email}&ldquo;
+        </h2>
+
+        <Button title={"SIGN OUT"} handleSubmit={handleLogout} />
+      </div>
     </nav>
   );
 };
 
-export default Logout;
+export default NavbarContainer;

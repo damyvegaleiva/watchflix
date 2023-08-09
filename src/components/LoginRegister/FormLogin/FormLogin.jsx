@@ -3,6 +3,7 @@ import FormInput from "../FormInput/FormInput";
 import { FaUserAlt } from "react-icons/fa";
 import FormEyeIcon from "../FormEyeIcon/FormEyeIcon";
 import { Link } from "react-router-dom";
+import Button from "../../Button/Button";
 
 const FormLogin = ({
   handleChange,
@@ -52,20 +53,12 @@ const FormLogin = ({
           iconInput={<FormEyeIcon value={passwordRef} />}
         />
 
-        <button
-          className="py-2 text-xs text-white transition duration-300 ease-in-out border sm:text-lg sm:w-full hover:border-red-600 hover:text-red-600 rounded-xl hover:bg-white w-36"
-          type="submit"
-        >
-          SIGN IN
-        </button>
+        <Button title={"SIGN IN"} />
+
         <p className="-m-5 text-white">OR</p>
-        <button
-          className="py-2 text-xs text-white transition duration-300 ease-in-out border w-36 w-1/ sm:text-lg sm:w-full hover:border-red-600 hover:text-red-600 rounded-xl hover:bg-white"
-          type="submit"
-          onClick={(e) => handleGoogle(e)}
-        >
-          SIGN IN WITH GOOGLE
-        </button>
+
+        <Button title={"SIGN WITH GOOGLE IN"} handleSubmit={handleGoogle} />
+
         <p className="text-sm text-center text-white sm:text-lg w-2/2">
           Don&apos;t have an account?{" "}
         </p>
