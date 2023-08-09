@@ -8,7 +8,7 @@
 
 ## Project Description:
 
-This website is mockup of streaming platform. It might look like a mockup of Netflix because of the name and colors but the intention is not to mockup the Netflix application but to create a mockup streaming platform.
+This website is mockup of streaming platform. It might look like a mockup of Netflix but the intention is not to mockup the Netflix application itself but to create a mockup of a streaming platform.
 This project was created with Vite.
 
 ## Resources
@@ -19,8 +19,8 @@ This project was created with Vite.
 
 ## Usage
 
-The website is fully working. You can search just for movies/tv shows or you can also search for both.
+The website is fully working. It requires an account to be able to login into the app. You can create an account under the REGISTER section. Once logged in you can search just for movies/tv shows or you can also search for both.
 
 ## Bugs Reports:
 
-In case of running into any kind of bugs or see anything that could potentially be improved don´t hesitate to reach out with your feeback to damythecoder@gmail.com
+In case of running into any kind of bugs or see anything that could potentially be improved don´t hesitate to reach out with your feedback to damythecoder@gmail.com
