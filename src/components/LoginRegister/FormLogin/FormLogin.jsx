@@ -14,7 +14,7 @@ const FormLogin = ({
   isSuccessful,
 }) => {
   return isSuccessful ? (
-    <SuccessfulContainer title={"Logging you in... ✔️"} />
+    <SuccessfulContainer title={"Logging you in... ✅"} />
   ) : (
     <>
       <h2 className="text-[1.5rem] sm:text-[1.75rem] font-extrabold text-center text-red-600 underline decoration-white decoration-2 mb-5">

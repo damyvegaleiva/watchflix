@@ -4,7 +4,7 @@ const LoginRegisterContainer = ({ FormContainer }) => {
       <img
         src="./images/login-bg.jpg"
         alt=""
-        className="absolute object-cover w-full h-full -z-10"
+        className="absolute object-cover w-screen h-screen -z-10"
       />
 
       <div className="w-[80%] lg:w-[800px] md:h-[800px] rounded-md border py-5  flex gap-5 items-center justify-center flex-col backdrop-blur-sm bg-black/60">

@@ -15,7 +15,7 @@ const FormRegister = ({
 }) => {
   return isSuccessful ? (
     <SuccessfulContainer
-      title={"ACCOUNT CREATED SUCCESSFULLY ✔️"}
+      title={"ACCOUNT CREATED SUCCESSFULLY ✅"}
       text={"Logging you in and redirecting you to Home page..."}
     />
   ) : (
