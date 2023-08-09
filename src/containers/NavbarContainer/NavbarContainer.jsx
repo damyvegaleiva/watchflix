@@ -23,7 +23,7 @@ const NavbarContainer = () => {
     setIsActive("-left-[1000px]");
   };
   return (
-    <nav className="relative flex flex-row items-center justify-between gap-5 px-8 py-2 border-b border-red-600 bg-black-600">
+    <nav className="sticky top-0 flex flex-row items-center justify-between gap-5 px-8 py-2 bg-black border-b border-red-600 bg-black-600">
       <Link to={"/home"}>
         <img
           src={"./images/preview.png"}
@@ -35,7 +35,7 @@ const NavbarContainer = () => {
       {/* -------------------------------MOBILE */}
 
       <div
-        className={`bg-black absolute transition:left lg:hidden duration-500 py-10 text-center ease-in-out flex flex-col items-center justify-center w-full h-[500px] gap-5 top-32 ${isActive} md:flex`}
+        className={`bg-black absolute transition:left lg:hidden duration-500 py-10 text-center ease-in-out flex flex-col items-center justify-center w-full h-[500px] gap-5 top-[113px] ${isActive} md:flex`}
       >
         <h2 className="text-white ">
           Welcome &ldquo;{user.displayName || user.email}&ldquo;
