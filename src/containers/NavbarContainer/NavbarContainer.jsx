@@ -29,7 +29,7 @@ const NavbarContainer = () => {
         <img
           src={"./images/preview.png"}
           alt="Watchflix logo"
-          className="w-24"
+          className="w-16"
         />
       </Link>
 
