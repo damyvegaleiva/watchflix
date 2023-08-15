@@ -22,8 +22,9 @@ const NavbarContainer = () => {
 
     setIsActive("-left-[1000px]");
   };
+
   return (
-    <nav className="sticky top-0 flex flex-row items-center justify-between gap-5 px-8 py-2 bg-black border-b border-red-600 bg-black-600">
+    <nav className="sticky top-0 z-10 flex flex-row items-center justify-between gap-5 px-8 py-2 bg-black border-b border-red-600 bg-black-600">
       <Link to={"/home"}>
         <img
           src={"./images/preview.png"}
