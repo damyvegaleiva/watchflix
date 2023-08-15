@@ -9,7 +9,7 @@ const SearchResultsContainer = () => {
   return (
     <main className="mt-10">
       <SliderContainer
-        title={"SEARCH RESULTS..."}
+        title={"SEARCH RESULTS"}
         tvMovieValue={optionId}
         value={id}
         URL_VALUE={MOVIE_SEARCH_URL}
