@@ -22,11 +22,7 @@ const DetailContainer = () => {
       </>
     );
 
-  return (
-    <>
-      <DetailItem {...data} isLoading={isLoading} selection={selection} />;
-    </>
-  );
+  return <DetailItem {...data} isLoading={isLoading} selection={selection} />;
 };
 
 export default DetailContainer;
