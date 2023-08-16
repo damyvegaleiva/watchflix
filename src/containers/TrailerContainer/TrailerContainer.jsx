@@ -4,7 +4,7 @@ import { YOUTUBE_URL } from "../../config/config";
 const TrailerContainer = ({ videos }) => {
   const trailer = TrailerAdapter(videos);
 
-  if (!trailer) return <h2 className="mt-10">No trailer available.</h2>;
+  if (!trailer) return null;
 
   return (
     <iframe
