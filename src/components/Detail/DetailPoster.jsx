@@ -1,4 +1,4 @@
-import { IMG_URL } from "../../../config/config";
+import { IMG_URL } from "../../config/config";
 
 const DetailPoster = ({ title, poster }) => {
   return (

@@ -1,12 +1,10 @@
-import DetailPoster from "../DetailPoster/DetailPoster";
-import DetailLinkContainer from "../DetailLinkContainer/DetailLinkContainer";
-
-import ErrorBoundary from "../../../utils/errorBoundary";
-
-import DetailParagraph from "../DetailParagraph/DetailParagraph";
-import TrailerContainer from "../../../containers/TrailerContainer/TrailerContainer";
-import ProvidersContainer from "../../../containers/ProvidersContainer/ProvidersContainer";
-import RecommendationsContainer from "../../../containers/RecommendationsContainer/RecommendationsContainer";
+import DetailPoster from "./DetailPoster";
+import DetailLinkContainer from "./DetailLinkContainer";
+import DetailParagraph from "./DetailParagraph";
+import TrailerContainer from "../../containers/TrailerContainer/TrailerContainer";
+import ErrorBoundary from "../../utils/errorBoundary";
+import ProvidersContainer from "../../containers/ProvidersContainer/ProvidersContainer";
+import RecommendationsContainer from "../../containers/RecommendationsContainer/RecommendationsContainer";
 
 const DetailItem = ({
   title,
@@ -17,6 +15,7 @@ const DetailItem = ({
   videos,
   ["watch/providers"]: providers,
   recommendations,
+  selection,
 }) => {
   return (
     <article className="-mt-5 text-center text-white ">
@@ -29,7 +28,7 @@ const DetailItem = ({
       <TrailerContainer videos={videos} />
 
       <ErrorBoundary fallback="[Sorry an unexpected error has ocurred.]">
-        <ProvidersContainer providers={providers} />
+        <ProvidersContainer providers={providers} selection={selection} />
       </ErrorBoundary>
 
       <RecommendationsContainer recommendations={recommendations} />

@@ -1,5 +1,5 @@
 import { DataFormatAdapter } from "../../adapters/DataFormatAdapter";
-import SliderList from "../../components/Slider/SliderList/SliderList";
+import SliderList from "../../components/Slider/SliderList";
 
 const RecommendationsContainer = ({ recommendations }) => {
   const related = DataFormatAdapter(recommendations);

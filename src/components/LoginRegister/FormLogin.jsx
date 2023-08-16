@@ -1,9 +1,9 @@
-import SuccessfulContainer from "../../../containers/SuccessfulContainer/SuccessfulContainer";
-import FormInput from "../FormInput/FormInput";
+import SuccessfulContainer from "../../containers/SuccessfulContainer/SuccessfulContainer";
+import FormInput from "./FormInput";
 import { FaUserAlt } from "react-icons/fa";
-import FormEyeIcon from "../FormEyeIcon/FormEyeIcon";
 import { Link } from "react-router-dom";
-import Button from "../../Button/Button";
+import FormEyeIcon from "./FormEyeIcon";
+import Button from "../Button/Button";
 
 const FormLogin = ({
   handleChange,
@@ -14,9 +14,10 @@ const FormLogin = ({
   userLogin,
   isSuccessful,
 }) => {
-  return isSuccessful ? (
-    <SuccessfulContainer title={"Logging you in... ✅"} />
-  ) : (
+  if (isSuccessful)
+    return <SuccessfulContainer title={"Logging you in... ✅"} />;
+
+  return (
     <>
       <h2 className="text-[1.5rem] sm:text-[1.75rem] font-extrabold text-center text-red-600 underline decoration-white decoration-2 mb-5">
         LOGIN

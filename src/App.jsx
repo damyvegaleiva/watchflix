@@ -22,12 +22,12 @@ function App() {
       <HelmetProvider>
         <BrowserRouter>
           <ScrollToTop />
-          {user ? (
+          {user && (
             <>
               {" "}
               <NavbarContainer /> <HeaderContainer />{" "}
             </>
-          ) : null}
+          )}
           <Routes>
             <Route
               path="/"

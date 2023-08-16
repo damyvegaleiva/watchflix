@@ -1,7 +1,7 @@
 import { useContext, useRef, useState } from "react";
-import { Navigate, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../context/AuthContext";
-import FormLogin from "../../components/LoginRegister/FormLogin/FormLogin";
+import { Navigate, useNavigate } from "react-router-dom";
+import FormLogin from "../../components/LoginRegister/FormLogin";
 
 const FormLoginContainer = () => {
   /// VARIABLES
@@ -12,8 +12,8 @@ const FormLoginContainer = () => {
   const [errors, setErrors] = useState({});
   const [isSuccessful, setIsSuccessful] = useState(false);
   const { login, loginWithGoogle, user } = useContext(AuthContext);
-  const navigate = useNavigate();
   const passwordRef = useRef();
+  const navigate = useNavigate();
 
   /// FUNCTIONS
 

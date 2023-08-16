@@ -1,9 +1,9 @@
-import { Link } from "react-router-dom";
+import SuccessfulContainer from "../../containers/SuccessfulContainer/SuccessfulContainer";
+import FormInput from "./FormInput";
 import { FaUserAlt } from "react-icons/fa";
-import FormInput from "../FormInput/FormInput";
-import FormEyeIcon from "../FormEyeIcon/FormEyeIcon";
-import SuccessfulContainer from "../../../containers/SuccessfulContainer/SuccessfulContainer";
-import Button from "../../Button/Button";
+import FormEyeIcon from "./FormEyeIcon";
+import { Link } from "react-router-dom";
+import Button from "../Button/Button";
 
 const FormRegister = ({
   userForm,
@@ -14,12 +14,15 @@ const FormRegister = ({
   handleChange,
   handleRegister,
 }) => {
-  return isSuccessful ? (
-    <SuccessfulContainer
-      title={"ACCOUNT CREATED SUCCESSFULLY ✅"}
-      text={"Logging you in and redirecting you to Home page..."}
-    />
-  ) : (
+  if (isSuccessful)
+    return (
+      <SuccessfulContainer
+        title={"ACCOUNT CREATED SUCCESSFULLY ✅"}
+        text={"Redirecting you to Home page..."}
+      />
+    );
+
+  return (
     <>
       <h2 className="text-[1.5rem] sm:text-[1.75rem] font-extrabold text-center text-red-600 underline decoration-white decoration-2 mb-5">
         REGISTER

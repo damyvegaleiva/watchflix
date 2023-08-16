@@ -1,8 +1,7 @@
 import { useContext, useRef, useState } from "react";
 import { AuthContext } from "../../context/AuthContext";
 import { Navigate, useNavigate } from "react-router-dom";
-
-import FormRegister from "../../components/LoginRegister/FormRegister/FormRegister";
+import FormRegister from "../../components/LoginRegister/FormRegister";
 
 const FormRegisterContainer = () => {
   /// VARIABLES
@@ -15,9 +14,9 @@ const FormRegisterContainer = () => {
   const [errors, setErrors] = useState({});
   const [isSuccessful, setIsSuccessful] = useState(false);
   const { register, validate, user } = useContext(AuthContext);
-  const navigate = useNavigate();
   const passwordRef = useRef();
   const verifyPasswordRef = useRef();
+  const navigate = useNavigate();
 
   /// FUNCTIONS
 

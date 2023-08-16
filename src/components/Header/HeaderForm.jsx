@@ -1,5 +1,5 @@
 import { useEffect, useRef } from "react";
-import HeaderFormOption from "../HeaderFormOption/HeaderFormOption";
+import HeaderFormOption from "./HeaderFormOption";
 
 const HeaderForm = ({
   handleChange,
@@ -22,9 +22,7 @@ const HeaderForm = ({
     >
       <HeaderFormOption handleCheck={handleCheck} />
 
-      {option.length > 0 ? (
-        ""
-      ) : (
+      {option.length === 0 && (
         <p className="mb-5 text-sm text-red-600">
           (select at least one option)
         </p>

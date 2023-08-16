@@ -1,26 +1,25 @@
 import { ProvidersAdapter } from "../../adapters/ProvidersAdapter";
-import { IMG_URL } from "../../config/config";
+import ProvidersList from "../../components/Providers/ProvidersList";
 
-const ProvidersContainer = ({ providers }) => {
+const ProvidersContainer = ({ providers, selection }) => {
   const providersResults = ProvidersAdapter(providers);
 
   return (
-    <div className="w-3/4 mx-auto mt-10 mb-14">
-      <h2 className="mb-2 tracking-wide underline decoration lg:text-lg ">
-        Available on:
-      </h2>
-      {providersResults?.length > 0 ? (
-        <div className="flex flex-row flex-wrap items-center justify-center gap-3">
-          {providersResults?.map((provider) => (
-            <img
-              key={provider.provider_id}
-              src={IMG_URL + provider.logo_path}
-              className="w-10 mx-2 rounded-xl"
-            />
-          ))}
-        </div>
-      ) : (
-        "Not available on any streaming platforms at the moment."
+    <div className="flex flex-col items-center justify-center w-3/4 mx-auto mt-10 gap-14 mb-14">
+      <ProvidersList
+        providers={providersResults.flatrate}
+        title={"Streaming on:"}
+        text={"Not available on any streaming platforms at the moment."}
+      />
+
+      {selection !== "tv" && (
+        <ProvidersList
+          providers={providersResults.buy}
+          title={"Available to buy/rent on:"}
+          text={
+            "Not available to buy/rent on any streaming platforms at the moment. "
+          }
+        />
       )}
     </div>
   );

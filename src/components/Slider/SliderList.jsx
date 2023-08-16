@@ -1,5 +1,5 @@
 import ScrollContainer from "react-indiana-drag-scroll";
-import SliderItem from "../SliderItem/SliderItem";
+import SliderItem from "./SliderItem";
 
 const SliderList = ({ data, tvMovieValue, difStyle }) => {
   return (

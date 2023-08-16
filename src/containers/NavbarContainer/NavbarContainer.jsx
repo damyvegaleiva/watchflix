@@ -1,14 +1,14 @@
 import { useContext, useState } from "react";
 import { AuthContext } from "../../context/AuthContext";
 import { Link, useNavigate } from "react-router-dom";
-import { RxHamburgerMenu, RxCross1 } from "react-icons/rx";
 import Button from "../../components/Button/Button";
+import { RxHamburgerMenu, RxCross1 } from "react-icons/rx";
 
 const NavbarContainer = () => {
+  const [isClicked, setIsClicked] = useState(false);
+  const [isActive, setIsActive] = useState("-left-[1000px]");
   const { logout, user } = useContext(AuthContext);
   const navigate = useNavigate();
-  const [isActive, setIsActive] = useState("-left-[1000px]");
-  const [isClicked, setIsClicked] = useState(false);
 
   const handleLogout = () => {
     logout();
@@ -36,7 +36,7 @@ const NavbarContainer = () => {
       {/* -------------------------------MOBILE */}
 
       <div
-        className={`bg-black absolute transition:left lg:hidden duration-500 py-10 text-center ease-in-out flex flex-col items-center justify-center w-full h-[500px] gap-5 top-[113px] ${isActive} md:flex`}
+        className={`bg-black absolute transition:left lg:hidden duration-500 py-10 text-center ease-in-out flex flex-col items-center justify-center w-full h-[500px] gap-5 top-[81px] ${isActive} md:flex`}
       >
         <h2 className="text-white ">
           Welcome &ldquo;{user.displayName || user.email}&ldquo;

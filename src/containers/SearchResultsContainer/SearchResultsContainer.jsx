@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom";
-import { MOVIE_SEARCH_URL } from "../../config/config";
-import SpinnerLoader from "../../components/Loader/SpinnerLoader/SpinnerLoader";
 import SliderContainer from "../SliderContainer/SliderContainer";
+import SpinnerLoader from "../../components/Loader/SpinnerLoader/SpinnerLoader";
+import { MOVIE_SEARCH_URL } from "../../config/config";
 
 const SearchResultsContainer = () => {
   const { id, optionId } = useParams();

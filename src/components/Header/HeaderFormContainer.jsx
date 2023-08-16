@@ -1,6 +1,6 @@
-import { useNavigate } from "react-router-dom";
 import { useState } from "react";
-import HeaderForm from "../HeaderForm/HeaderForm";
+import { useNavigate } from "react-router-dom";
+import HeaderForm from "./HeaderForm";
 
 const HeaderFormContainer = () => {
   const [input, setInput] = useState("");

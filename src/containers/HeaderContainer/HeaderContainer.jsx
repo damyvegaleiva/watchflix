@@ -1,5 +1,5 @@
-import HeaderImage from "../../components/Header/HeaderImage/HeaderImage";
-import HeaderFormContainer from "../../components/Header/HeaderFormContainer/HeaderFormContainer";
+import HeaderImage from "../../components/Header/HeaderImage";
+import HeaderFormContainer from "../../components/Header/HeaderFormContainer";
 
 const HeaderContainer = () => {
   return (
