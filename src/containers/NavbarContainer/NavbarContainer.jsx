@@ -36,7 +36,7 @@ const NavbarContainer = () => {
       {/* -------------------------------MOBILE */}
 
       <div
-        className={`bg-black absolute transition:left lg:hidden duration-500 py-10 text-center ease-in-out flex flex-col items-center justify-center w-full h-[500px] gap-5 top-[81px] ${isActive} md:flex`}
+        className={`bg-black absolute transition:left md:hidden duration-500 py-10 text-center ease-in-out flex flex-col items-center justify-center w-full h-[500px] gap-5 top-[81px] ${isActive} md:flex`}
       >
         <h2 className="text-white ">
           Welcome &ldquo;{user.displayName || user.email}&ldquo;
@@ -46,19 +46,19 @@ const NavbarContainer = () => {
       </div>
       {isClicked ? (
         <RxCross1
-          className="w-10 h-10 text-white lg:hidden"
+          className="w-10 h-10 text-white md:hidden"
           onClick={handleShowHideNavBar}
         />
       ) : (
         <RxHamburgerMenu
-          className="w-10 h-10 text-white lg:hidden"
+          className="w-10 h-10 text-white md:hidden"
           onClick={handleShowHideNavBar}
         />
       )}
 
       {/* -------------------------------DESKTOP */}
 
-      <div className="items-end justify-center hidden gap-2 lg:flex-col lg:flex">
+      <div className="items-end justify-center hidden gap-2 md:flex-col md:flex">
         <h2 className="text-white ">
           Welcome &ldquo;{user.displayName || user.email}&ldquo;
         </h2>
