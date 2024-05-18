@@ -56,7 +56,7 @@ const FormLogin = ({
 
         <Button title={"SIGN IN"} />
 
-        <p className="-m-5 text-white">OR</p>
+        <p className="-m-4 text-white">OR</p>
 
         <Button title={"SIGN IN WITH GOOGLE"} handleSubmit={handleGoogle} />
 
