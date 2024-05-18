@@ -28,7 +28,7 @@ const FormRegister = ({
         REGISTER
       </h2>
       <form
-        className="flex flex-col items-center justify-center gap-10 mx-auto rounded-xl "
+        className="flex flex-col items-center justify-center mx-auto gap-7 rounded-xl "
         onSubmit={(e) => handleRegister(e)}
       >
         <FormInput
