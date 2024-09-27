@@ -2,13 +2,13 @@ import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyBfr5nAO-hHc62NGeAfX8XYP9oQN8HmCtg",
-  authDomain: "watchflix-database.firebaseapp.com",
-  projectId: "watchflix-database",
-  storageBucket: "watchflix-database.appspot.com",
-  messagingSenderId: "954142204629",
-  appId: "1:954142204629:web:158577a2507c31e8b3785c",
-  measurementId: "G-5N1KHKQ349",
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOM,
+  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
+  appId: import.meta.env.VITE_FIREBASE_APP_ID,
+  measurementId: import.meta.env.VITE_FIREBASE_MEASUREMENT_ID,
 };
 
 const app = initializeApp(firebaseConfig);
