@@ -31,15 +31,22 @@ const FormLoginContainer = () => {
     e.preventDefault();
     const res = await login(userLogin.email, userLogin.password);
 
-    if (res === "auth/wrong-password") {
-      return setErrors({ password: "Wrong password." });
+    if (res === "auth/invalid-login-credentials") {
+      return setErrors({
+        password: "That email and password combination is not valid.",
+      });
     }
-    if (res === "auth/user-not-found") {
-      return setErrors({ email: "Account not found with this email." });
-    }
-    if (res === "auth/too-many-requests") {
-      return setErrors({ requests: "Too many attempts, try again later." });
-    }
+
+    // --------------------------------------BACKUP CODE TO BE TESTED ---------------------------------
+    // if (res === "auth/wrong-password") {
+    //   return setErrors({ password: "Wrong password." });
+    // }
+    // if (res === "auth/user-not-found") {
+    //   return setErrors({ email: "Account not found with this email." });
+    // }
+    // if (res === "auth/too-many-requests") {
+    //   return setErrors({ requests: "Too many attempts, try again later." });
+    // }
 
     setIsSuccessful(true);
     setTimeout(() => {

@@ -24,8 +24,7 @@ function App() {
           <ScrollToTop />
           {user && (
             <>
-              {" "}
-              <NavbarContainer /> <HeaderContainer />{" "}
+              <NavbarContainer /> <HeaderContainer />
             </>
           )}
           <Routes>
